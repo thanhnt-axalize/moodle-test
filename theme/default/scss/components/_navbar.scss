@@ -1,0 +1,15 @@
+.de-bg-primary {
+    background-color: $de_primary_color !important;
+}
+
+#de-header-navbar {
+    justify-content: center;
+
+    &.fixed-top {
+        height: $header-height + 1px;
+    }
+
+    .container-fluid {
+        padding: 0 1.5rem;
+    }
+}

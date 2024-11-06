@@ -1,0 +1,20 @@
+#page.drawers {
+    margin-top: $header-height;
+}
+.drawer-toggles {
+    .drawer-toggler {
+        top: calc(#{$header-height} + 0.7rem);
+    }
+}
+@include media-breakpoint-up(lg) {
+    .drawer-left, .drawer-right {
+        top: $header-height;
+        height: calc(100vh - #{$header-height});
+    }
+}
+
+@include media-breakpoint-up(xl) {
+    .main-inner {
+        max-width: 1200px !important;
+    }
+}
