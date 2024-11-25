@@ -26,4 +26,6 @@
 defined('MOODLE_INTERNAL') || die();
 
 $string['choosereadme'] = 'Default is a theme...';
+$string['loggedinasguest'] = 'Guess';
+$string['login'] = 'Login';
 $string['pluginname'] = 'Default';

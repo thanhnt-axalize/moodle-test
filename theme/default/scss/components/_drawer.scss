@@ -1,0 +1,6 @@
+[data-region=right-hand-drawer] {
+    &.drawer {
+        top: $header-height;
+        height: calc(100% - $header-height);
+    }
+}

@@ -1,15 +1,31 @@
-.de-bg-primary {
-    background-color: $de_primary_color !important;
+.primary-navigation {
+    .navigation {
+        height: $header-height;
+        .nav-link {
+            height: $header-height;
+        }
+    }
 }
-
 #de-header-navbar {
     justify-content: center;
-
     &.fixed-top {
         height: $header-height + 1px;
     }
-
     .container-fluid {
         padding: 0 1.5rem;
+    }
+}
+.de-primary-btn {
+    align-content: center;
+    height: 40px;
+    padding: 0 2rem;
+    background-color: $de_secondary_color;
+    color: $text-light;
+    border-radius: 10px;
+
+    &:hover {
+        color: $text-light;
+        background-color: $de_secondary_color_hover;
+        text-decoration: none;
     }
 }
