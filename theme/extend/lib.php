@@ -19,21 +19,21 @@
  *
  * Documentation: {@link https://docs.moodle.org/dev/Themes}
  *
- * @package    theme_extend
- * @copyright  2024 LMSCloud.io
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- */
-
-/**
- * Returns the main SCSS content.
- *
  * @param theme_config $theme The theme config object.
  * @return string
+ *@license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * /
+ *
+* /**
+ * Returns the main SCSS content.
+  *
+  * @package    theme_extend
+ * @copyright  2024 LMSCloud.io
  */
-function theme_extend_get_main_scss_content($theme) {
+function theme_extend_get_main_scss_content(theme_config $theme): string {
     // Example content - use the setting 'preset' from this theme but the actual presets - from Boost theme.
+    /**@var stdClass $CFG*/
     global $CFG;
-
     $scss = '';
 
     $filename = !empty($theme->settings->preset) ? $theme->settings->preset : null;
@@ -61,7 +61,7 @@ function theme_extend_get_main_scss_content($theme) {
  * @param theme_config $theme The theme config object.
  * @return string
  */
-function theme_extend_get_extra_scss($theme) {
+function theme_extend_get_extra_scss(theme_config $theme): string {
     return !empty($theme->settings->scss) ? $theme->settings->scss : '';
 }
 
@@ -69,9 +69,9 @@ function theme_extend_get_extra_scss($theme) {
  * Get SCSS to prepend.
  *
  * @param theme_config $theme The theme config object.
- * @return array
+ * @return string
  */
-function theme_extend_get_pre_scss($theme) {
+function theme_extend_get_pre_scss(theme_config $theme): string {
     return !empty($theme->settings->scsspre) ? $theme->settings->scsspre : '';
 }
 
@@ -81,8 +81,8 @@ function theme_extend_get_pre_scss($theme) {
  * @param theme_config $theme The theme config object.
  * @return string compiled CSS
  */
-function theme_extend_get_precompiled_css($theme) {
+function theme_extend_get_precompiled_css(theme_config $theme): string {
     global $CFG;
-    // By default fallback to Boost CSS.
+    // By default, fallback to Boost CSS.
     return file_get_contents($CFG->dirroot . '/theme/boost/style/moodle.css');
 }

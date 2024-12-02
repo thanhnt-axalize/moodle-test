@@ -24,11 +24,15 @@
  * @package    theme_extend
  * @copyright  2024 LMSCloud.io
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ *
+ * @global \core\output\theme_config $THEME
  */
+
+use core\output\icon_system;
 
 defined('MOODLE_INTERNAL') || die();
 
-// Variable $THEME is defined before this page is included and we can define settings by adding properties to this global object.
+// Variable $THEME is defined before this page is included, and we can define settings by adding properties to this global object.
 
 // The first setting we need is the name of the theme. This should be the last part of the component name, and the same
 // as the directory name for our theme.
@@ -87,16 +91,16 @@ $THEME->rendererfactory = theme_overridden_renderer_factory::class;
 $THEME->requiredblocks = '';
 
 // This is a feature that tells the blocks library not to use the "Add a block" block. We don't want this in boost based themes
-// because it forces a block region into the page when editing is enabled and it takes up too much room.
+// because it forces a block region into the page when editing is enabled, and it takes up too much room.
 $THEME->addblockposition = BLOCK_ADDBLOCK_POSITION_FLATNAV;
 
 // Whether theme supports course index (area on the left of the course index page that has a list of all activities).
 $THEME->usescourseindex = true;
 
 // Name of the class extending \core\output\icon_system that is used for rendering icons.
-$THEME->iconsystem = \core\output\icon_system::FONTAWESOME;
+$THEME->iconsystem = icon_system::FONTAWESOME;
 
-// Whether theme provides a Edit on/off switch. If disabled, a button "Turn editing on/off" will be added to the pages.
+// Whether theme provides Edit on/off switch. If disabled, a button "Turn editing on/off" will be added to the pages.
 $THEME->haseditswitch = true;
 
 // List of items from the primary navigation that theme wants to remove.
